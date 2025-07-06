@@ -1,0 +1,18 @@
+---
+layout: compress
+---
+
+{% include head.html %}
+
+    <main>
+
+        {% include header.html %}
+
+        {{ content }}
+            <a href="{{ site.baseurl }}{{ sitemap.url }}">{{ post.title }}</a>
+    </main>
+
+    {% include footer.html %}
+
+</body>
+</html>

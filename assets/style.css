@@ -5,7 +5,7 @@
 
 :root {
     --width: 900px;
-    --font-main: 'Fira Code', monospace;
+    --font-main: 'Fira Code', 'Noto Sans KR', monospace, sans-serif;
     --font-secondary: 'Fira Code', monospace;
     --font-scale: .95em;
     --background-color: #F8F1E5; /* Lighter cream */
@@ -53,6 +53,7 @@ h3,
 h4,
 h5,
 h6 {
+    line-height: 0;
     font-family: var(--font-main);
     color: var(--heading-color);
 }
@@ -64,6 +65,18 @@ a {
     text-decoration: none;
     border-bottom: 3px solid var(--main-color);
 }
+
+
+.title a {
+  text-decoration: none;   /* 밑줄 없애기 */
+  border-bottom: none;     /* 밑줄 대신 선 있으면 제거 */
+  color: inherit;          /* 부모 색상 상속 */
+}
+
+/* .title 내부 a에는 화살표 표시 제거 */
+/* .title a[href^="http"]::after {
+    content: none;
+} */
 
 a:hover {
     background-color: var(--main-color);
@@ -197,9 +210,9 @@ td {
 }
 
 /* external link marker */
-a[href^="http"]:where(:not([href*="knhash.in/"])):not(:has(img))::after {
+/* a[href^="http"]:where(:not([href*="knhash.in/"])):not(:has(img))::after {
     content: "↗"
-}
+} */
 
 /* Form elements */
 input, button, textarea, select {
